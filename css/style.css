@@ -1188,7 +1188,6 @@ template {
     margin-bottom: 20px;
   }
   .activities .card {
-    width: 49%;
     height: 230px;
   }
 }
@@ -1361,6 +1360,12 @@ template {
   }
   .card {
     width: 100%;
+  }
+  .activities-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 /*# sourceMappingURL=style.css.map */
