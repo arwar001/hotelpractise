@@ -122,9 +122,40 @@
   .container
     max-width: 700px
     width: 92%
+  body
+    padding-top: 78px
+  .navbar_search--mobile-hidden, .navbar_user--mobile-hidden
+    display: none
+  .navbar_search--mobile-visible, .navbar_user--mobile-visible
+    display: flex
   .navbar
-    .search, &-menu, .user
+    &_user
+      flex-direction: column
+      justify-content: center
+    &--mobile
+      &_fixed
+        position: fixed
+        left: 0
+        top: 0
+        right: 0
+        z-index: 99
+    &-bottom
       display: none
+      position: fixed
+      left: 0
+      right: 0
+      bottom: 0
+      top: 78px
+      padding-top: 30px
+      &--visible
+        display: block
+    &-menu
+      flex-direction: column
+      &__item
+        margin-bottom: 20px
+        &--mobile
+          &_visible
+            display: block
   .menu
     &-button
       display: flex
@@ -140,6 +171,12 @@
         width: 16px
         height: 1px
         background-color: #333333
+  .user
+    &__name
+      &--light
+        color: #fff
+        margin-left: 0
+        margin-top: 10px
   .hotel
     &-right
       min-height: 450px
@@ -252,5 +289,3 @@
     .footer__bottom-image
       margin-left: 0
       margin-top: 10px
-
-
