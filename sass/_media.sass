@@ -4,6 +4,8 @@
       display: none
 
 @media (max-width: 1200px)
+  .footer__bottom-image
+    margin-left: 128px
   .container
     max-width: 960px
   .menu
@@ -90,7 +92,15 @@
       &-form
         grid-column: span 5
         grid-row: 4
+  .footer__bottom
+    margin: 0
+    margin-top: 25px
+  .footer__bottom-image
+    margin-left: 140px
+
 @media (max-width: 768px)
+  .footer__bottom-image
+    margin-left: 132px
   .hotel
     &-name
       flex-basis: 100%
@@ -236,3 +246,11 @@
     &__info
       position: absolute
       padding-top: 210px
+  .footer__bottom
+    display: flex
+    flex-direction: column
+    .footer__bottom-image
+      margin-left: 0
+      margin-top: 10px
+
+

@@ -1285,6 +1285,26 @@ template {
   color: #E0E0E0;
 }
 
+.footer__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+  margin-left: 390px;
+}
+
+.footer__bottom-text a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  max-width: 283px;
+  margin-right: 13px;
+}
+
+.footer__bottom-image {
+  margin-left: 277px;
+}
+
 @media (max-width: 1920px) {
   .menu-button {
     display: none;
@@ -1292,6 +1312,9 @@ template {
 }
 
 @media (max-width: 1200px) {
+  .footer__bottom-image {
+    margin-left: 128px;
+  }
   .container {
     max-width: 960px;
   }
@@ -1418,9 +1441,19 @@ template {
     -ms-grid-row: 4;
     grid-row: 4;
   }
+  .footer__bottom {
+    margin: 0;
+    margin-top: 25px;
+  }
+  .footer__bottom-image {
+    margin-left: 140px;
+  }
 }
 
 @media (max-width: 768px) {
+  .footer__bottom-image {
+    margin-left: 132px;
+  }
   .hotel-name {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1654,6 +1687,19 @@ template {
   .footer__info {
     position: absolute;
     padding-top: 210px;
+  }
+  .footer__bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer__bottom .footer__bottom-image {
+    margin-left: 0;
+    margin-top: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */
