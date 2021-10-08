@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Nunito:wght@400;700;800&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -19,18 +20,18 @@
   <header class="navbar navbar--mobile_fixed">
     <div class="container">
       <div class="navbar-top">
-        <a href="#" class="logo">
+        <a href="#" class="logo" data-aos="fade-right" data-aos-delay="100" >
           <img src="img/horizontal-logo.svg" alt="Logo: Best tour plan" class="logo__image">
         </a>
 
-        <form action="#" class="search navbar_search navbar_search--mobile-hidden">
+        <form data-aos="fade-right" data-aos-delay="200" action="#" class="search navbar_search navbar_search--mobile-hidden">
           <input type="text" class="search__input" placeholder="Search Location">
           <button class="search__button">
             <img src="img/search.svg" alt="Icon: search">
           </button>
         </form>
 
-        <a href="#" class="user navbar_user navbar_user--mobile-hidden">
+        <a href="#" class="user navbar_user navbar_user--mobile-hidden" data-aos="fade-right" data-aos-delay="300">
           <img src="img/avatar.jpg" alt="avatar: Nathan" class="user__avatar">
           <span class="user__name">Nathan</span>
         </a>
@@ -125,7 +126,7 @@
             Half-Board/ All Inclusive + Complimentary Activities + Child Stays Free
           </p>
         </div>
-        <div class="rating hotel-info__rating">
+        <div data-toggle="modal" data-href="#rating-modal" class="rating hotel-info__rating">
           <span class="rating__text">User Rattings</span>
           <span class="rating__counter">4.5/<span class="number">5</span></span>
         </div>
@@ -181,7 +182,7 @@
                 <span class="booking__num">12100</span>
               </a>
             </div>
-            <button class="button booking__button">View Other Options</button>
+            <button data-toggle="modal" data-href="#booking-modal" class="button booking__button">View Other Options</button>
           </div>
           
           <div class="map">
@@ -196,7 +197,7 @@
   </section>
 
   <section class="newsletter">
-    <div class="newsletter-wrapper">
+    <div class="newsletter-wrapper" data-aos="fade-right">
       <h2 class="newsletter-title newsletter__title">
         subscribe to our
         <span class="newsletter-title__strong">Newsletter</span>
@@ -252,7 +253,7 @@
       <h2 class="activities__title">Other Activities</h2>
       <div class="activities-wrapper">
 
-        <div class="card activities__card">
+        <div class="card activities__card" data-aos="fade-up" data-aos-delay="100">
           <img src="img/activity-1.jpg" alt="The curious corner 
            of chamarel" class="card__image">
           <h3 class="card__title">The curious corner
@@ -260,7 +261,7 @@
           <button class="card__button">Book Now</button>
         </div>
 
-        <div class="card activities__card">
+        <div class="card activities__card" data-aos="fade-up" data-aos-delay="300">
           <img src="img/activity-2.jpg" alt="Gymkhana club golf
            course" class="card__image">
           <h3 class="card__title">Gymkhana club golf
@@ -270,7 +271,7 @@
 
         <div class="card activities__card">
           <img src="img/activity-3.jpg" alt="Tamarind falls hiking
-           trip - full day" class="card__image">
+           trip - full day" class="card__image" data-aos="fade-up" data-aos-delay="500">
           <h3 class="card__title">Tamarind falls hiking
           trip - full day</h3>
           <button class="card__button">Book Now</button>
@@ -278,7 +279,7 @@
 
         <div class="card activities__card">
           <img src="img/activity-4.jpg" alt="The blue marine discovery
-           quest" class="card__image">
+           quest" class="card__image" data-aos="fade-up" data-aos-delay="700">
           <h3 class="card__title">The blue marine discovery
           quest</h3>
           <button class="card__button">Book Now</button>
@@ -414,10 +415,14 @@
         
         <div class="footer__contact-form">
           <h3 class="footer__title footer__title--mb-3">Send us a message</h3>
-          <form action="send.php" method="POST" class="footer__form">
-            <input type="text" class="input footer__input" placeholder="Your Full Name" name="name">
-            <input type="text" class="input footer__input" placeholder="Phone Number" name="phone">
-            <textarea class="footer__message" cols="30" rows="4" placeholder="Message" name="message"></textarea>
+          <form action="send.php" method="POST" class="footer__form form">
+            <div class="footer__input-group">
+              <input type="text" class="input footer__input" placeholder="Your Full Name*" name="name" required>
+            </div>
+            <div class="footer__input-group">
+              <input type="text" class="input footer__input" placeholder="Phone Number*" name="phone" required>
+            </div>
+            <textarea class="message footer__message" cols="30" rows="4" placeholder="Message" name="message"></textarea>
             <button class="button footer__button" type="submit">Send</button>
             <span class="footer__info">* Required Fields</span>
           </form>
@@ -438,8 +443,45 @@
 
   </footer>
 
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <div class="modal" id="booking-modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog">
+      <a href="#" class="modal__close">
+        <img src="img/close.svg" alt="icon: close"/>
+      </a>
+      <h3 class="modal__title modal__title--mb-3">Booking</h3>
+      <form action="send.php" method="POST" class="modal__form form">
+        <input type="text" class="input modal__input" placeholder="Your Full Name*" name="name" required>
+        <input type="text" class="input modal__input" placeholder="Phone Number*" name="phone" required>
+        <input type="text" class="input modal__input" placeholder="Your Email*" name="email" required>
+        <textarea class="message modal__message" cols="30" rows="4" placeholder="Message" name="message"></textarea>
+        <button class="button modal__button" type="submit">Send</button>
+        <span class="modal__info">* Required Fields</span>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="rating-modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog">
+      <a href="#" class="modal__close">
+        <img src="img/close.svg" alt="icon: close">
+      </a>
+      <h3 class="modal__title modal__title--mb-3">Send us a feedback</h3>
+      <form action="send.php" method="POST" class="modal__form form">
+        <input type="text" class="input modal__input" placeholder="Your Full Name" name="name" required>
+        <input type="text" class="input modal__input" placeholder="Phone Number" name="phone" required>
+        <textarea class="message modal__message" cols="30" rows="4" placeholder="Message" name="message"></textarea>
+        <button class="button modal__button" type="submit">Send</button>
+        <span class="modal__info">* Required Fields</span>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
 
 </body>

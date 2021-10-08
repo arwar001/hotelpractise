@@ -24,7 +24,8 @@
     height: 230px
   .footer
     &__input
-      flex-basis: 100%
+      &-group
+        flex-basis: 100%
 @media (max-width: 992px)
   .container, .newsletter-wrapper
     max-width: 700px
@@ -67,6 +68,9 @@
     .card
       height: 230px
   .footer
+    &__input
+      &-group
+        flex-basis: 48%
     &-wrapper
       grid-template-columns: repeat(6, 1fr)
       grid-row-gap: 40px
@@ -303,3 +307,4 @@
     margin-bottom: 20px
   .navbar_search--mobile-visible
     width: 300px
+  
